@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Add New Post{% endblock %}
+
+{% block content %}
+    <h1 style="color: #007bff;">Add a New Blog Post</h1>
+    
+    <form method="POST" style="max-width: 400px; padding: 20px; border: 1px solid #ddd;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="background: #28a745; color: white; padding: 10px; border: none; cursor: pointer;">
+            Publish
+        </button>
+    </form>
+    
+    <a href="{% url 'home' %}" style="display: block; margin-top: 10px; text-decoration: none; color: #007bff;">
+        ⬅ Back to Home
+    </a>
+{% endblock %}
